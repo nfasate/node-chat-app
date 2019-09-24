@@ -1,14 +1,5 @@
 const socket = io()
 
-// socket.on('countUpdated', (count) => {
-//     console.log(`Count has been updated ${count}`)
-// })
-
-// document.querySelector('#increament').addEventListener('click', () => {
-//     console.log('clicked')
-//     socket.emit('increament')
-// })
-
 // Elements
 const $messageForm = document.querySelector('#message-form')
 const $messageFormInput = $messageForm.querySelector('input')
@@ -123,6 +114,7 @@ $locationButton.addEventListener('click', () => {
 
 socket.emit('join', { username, room }, (error) => {
     if (error) {
-        
+        alert(error)
+        location.href = '/'
     }
 })
